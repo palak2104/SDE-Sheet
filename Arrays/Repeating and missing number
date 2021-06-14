@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+   int n;
+   cin>>n;
+   int arr[n+10];
+   int asum=0, asqsum=0;
+   for(int i=0;i<n;i++){
+   cin>>arr[i];
+   asum+=arr[i];
+   asqsum+=arr[i]*arr[i];
+   }
+   int S=(n*(n+1))/2;
+   int S2=(n*(n+1)*(2*n+1))/6;
+   int xminusy=S-asum;
+   int xsqminusysq=S2-asqsum;
+   int xplusy=xsqminusysq/xminusy;
+   int x=(xplusy+xminusy)/2;
+   int y=xplusy-x;
+   cout<<"repeating "<<y<<" missing "<<x;
+   
+
+    return 0;
+}
