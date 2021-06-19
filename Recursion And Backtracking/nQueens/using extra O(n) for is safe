@@ -2,15 +2,15 @@ class Solution {
     bool isSafe(int rows,int cols,int n,vector<string>&res){
         int i,j;
         for(i=cols;i>=0;i--)
-        if(res[rows][i])
+        if(res[rows][i]=='Q')
         return false;
         
         for(i=rows,j=cols;i>=0 && j>=0;i--,j--)
-        if(res[i][j]==1)
+        if(res[i][j]=='Q')
         return false;
         
         for(i=rows,j=cols;i<n && j>=0;i++,j--)
-        if(res[i][j]==1)
+        if(res[i][j]=='Q')
         return false;
     
     return true;
