@@ -8,7 +8,7 @@ bool isSafe(vector<int>graph[],int node,int color[],int n,int col){
     return true;
 }
 bool ColorGraph(int node,vector<int>graph[],int color[],int m,int n){
-   if(node==n)
+   if(node==n+1)
    return true;
    for(int col=1;col<=m;col++){
        if(isSafe(graph,node,color,n,col)){
