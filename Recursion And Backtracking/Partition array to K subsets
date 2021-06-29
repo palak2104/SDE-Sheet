@@ -34,7 +34,8 @@ class Solution{
       sum[i]+=a[ind];
       if(Partition(ind+1,a,n,k,set,sum,subset+1)) return true;
       sum[i]-=a[ind];
-      set[i].pop_back();  
+      set[i].pop_back();
+      break;
       }
       }
       
