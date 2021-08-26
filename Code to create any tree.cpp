@@ -22,14 +22,14 @@ void makeTree(Node* node){
         char ch;
         cin>>ch;
         if(ch=='l'){
-          cout<<"Enter Data for the child of node "<<node->val<<endl;
+          cout<<"Enter Data for the left child of node "<<node->val<<endl;
           int d;
           cin>>d;
           node->left= new Node(d);
           makeTree(node->left);
       }
       else if(ch=='r'){
-          cout<<"Enter Data for the child of node "<<node->val<<endl;
+          cout<<"Enter Data for the right child of node "<<node->val<<endl;
           int d;
           cin>>d;
           node->right= new Node(d);
