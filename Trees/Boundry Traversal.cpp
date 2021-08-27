@@ -14,6 +14,8 @@ void leftBoundry(Node* node,vector<int>&res){
     }
 }
 void leafNodes(Node* node,vector<int>&res){
+    if(node==NULL)
+    return;
     if(!node->left && !node->right){
        res.push_back(node->data);
        return;
@@ -22,7 +24,6 @@ void leafNodes(Node* node,vector<int>&res){
     leafNodes(node->right,res);
 }
 void RightBundry(Node* node,stack<int>&st){
-    node=node->right;
     while(true){
         if(node->right){
             st.push(node->data);
@@ -40,14 +41,17 @@ public:
     vector <int> printBoundary(Node *root)
     {
         //Your code here
-        
         vector<int>res;
         if(root==NULL)
         return res;
+         if(root->left){
         leftBoundry(root,res);
+         }
+         else res.push_back(root->data);
         leafNodes(root,res);
         stack<int>st;
-        RightBundry(root,st);
+        if(root->right)
+        RightBundry(root->right,st);
         while(!st.empty()){
             res.push_back(st.top());
             st.pop();
@@ -55,4 +59,3 @@ public:
         return res;
     }
 };
-
