@@ -5,7 +5,7 @@ public:
     int getMin(string str){
         stack<char>st;
         for(int i=0;i<str.length();i++){
-        if(str[i]>=97 && str[i]<=122) cntinue;
+        if(str[i]>=97 && str[i]<=122) continue;
             if(st.size()==0)
                 st.push(str[i]);
             else if(str[i]==')'&& st.top()=='(')
