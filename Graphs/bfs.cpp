@@ -20,7 +20,7 @@ void bfs(int i,vector<int>&visited,vector<int>&res,vector<int>arr[]){
 }
 vector<int>CheckDfs(int n,int e,vector<int>arr[]){
     vector<int>visited(n+1,0);
-    vector<int>res(n+1);
+    vector<int>res;
     for(int i=0;i<n;i++){
         if(!visited[i]){
             bfs(i,visited,res,arr);
