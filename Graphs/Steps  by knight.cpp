@@ -37,7 +37,7 @@ class Solution
 	for(int i=0;i<8;i++){
 	    if(isSafe(x+dx[i],y+dy[i],n)){
 	       if(dist[x+dx[i]][y+dy[i]]==-1){
-	       dist[x+dx[i]][y+dy[i]]==dist[x][y]+1;
+	       dist[x+dx[i]][y+dy[i]]=dist[x][y]+1;
 	       q.push({x+dx[i],y+dy[i]});
 	       }
 	       
