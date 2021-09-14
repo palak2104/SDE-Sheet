@@ -1,37 +1,45 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-class Solution{
-    bool isPresent(int ind,int i,vector<string>& dict,string s){
-        string str=s.substr(ind,i-ind+1);
-        auto it=find(dict.begin(),dict.end(),str);
-        if(it!=dict.end()) return true;
-        return false;
+class Solution {
+public:
+    int getMin(string str){
+        stack<char>st;
+        for(int i=0;i<str.length();i++){
+        if(str[i]>=97 && str[i]<=122) continue;
+            if(st.size()==0)
+                st.push(str[i]);
+            else if(str[i]==')'&& st.top()=='(')
+                st.pop();
+            else  st.push(str[i]);
+        }
+        return st.size();
     }
-    void breakfunc(int ind,vector<string>& dict,string s,vector<string>&res,string str){
-        if(ind==s.length()){
-            str.pop_back();
-            res.push_back(str);
-            
+    void validParenthesis(int mr,string str,set<string>&result){
+        if(mr==0){
+            //if(getMin(str)==0){
+                //cout<<str<<" ";
+                result.insert(str);
+            //}
             return;
         }
-        for(int i=ind;i<s.length();i++){
-            if(isPresent(ind,i,dict,s)){
-                
-                 breakfunc(i+1,dict,s,res,str+s.substr(ind,i-ind+1)+" ");
-                 
-            }
+        for(int i=0;i<str.length();i++){
+        string a=str.substr(0,i);
+        string b=str.substr(i+1,str.length()-1);
+        if(getMin(a+b)==mr-1)
+        validParenthesis(mr-1,a+b,result);  
         }
         return;
     }
-public:
-    vector<string> wordBreak(int n, vector<string>& dict, string s)
-    {
-        
+    vector<string> removeInvalidParentheses(string s) {
+       int mr=getMin(s); 
+       //cout<<mr;
+       set<string>result;
+        validParenthesis(mr,s,result);
         vector<string>res;
-        
-        string str="";
-        breakfunc(0,dict,s,res,str);
+       for(auto it:result){
+           res.push_back(it);
+       }
         return res;
     }
 };
