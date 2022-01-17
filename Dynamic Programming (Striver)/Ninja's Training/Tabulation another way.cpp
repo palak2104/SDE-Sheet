@@ -11,9 +11,8 @@ int ninjaTraining(int n, vector<vector<int>> &arr)
         }
         dp[0][i]=maxi;
     }
-    dp[0][3]=max(dp[0][0],max(dp[0][1],dp[0][2]));
     for(int day=1;day<n;day++){
-    for(int last=0;last<4;last++){
+    for(int last=0;last<3;last++){
     dp[day][last]=0;
     for(int i=0;i<3;i++){
     if(i!=last)
@@ -21,5 +20,9 @@ int ninjaTraining(int n, vector<vector<int>> &arr)
     }
     }
     }
-return dp[n-1][3];
+    int maxi=0;
+    for(int i=0;i<3;i++){
+      maxi=max(maxi,dp[n-1][i]);  
+    }
+    return maxi;
 }
