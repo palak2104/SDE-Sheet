@@ -6,5 +6,5 @@ if(i==nums.size()){
             if(sum==S) return 1;
             return 0;
 }
-because in the question it is written that <mark>You want to build an expression out of nums by adding one of the symbols '+' and '-' before each integer in nums and then concatenate all the integers.</mark>
+because in the question it is written that <b>You want to build an expression out of nums by adding one of the symbols '+' and '-' before each integer in nums and then concatenate all the integers.</b>
 So we will check the condition only after adding '+' or '-' infront of every integer.
