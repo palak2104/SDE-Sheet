@@ -7,7 +7,7 @@ Problem Link: https://leetcode.com/problems/target-sum/
             return 0;
   }
   because in the question it is written that <b>You want to build an expression out of nums by adding one of the symbols '+' and '-' before each integer in nums and then        concatenate all the integers.</b>
-  So we will check the condition only after adding '+' or '-' infront of every integer.
+  So we will check the condition only after adding '+' or '-' infront of every integer.<br><br>
 
 2.We are taking the size of the array <b>vector<vector<int>>dp(nums.size(),vector<int>(2001,-1))</b>
   and adding 1000 before sum
