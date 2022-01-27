@@ -2,11 +2,11 @@ int func(int i,int j,int n,vector<vector<int>> &arr){
     if(i==0){
         return arr[i][j];
     }
+    if(j<0 || j>=n) return -1e8;
     int left=0,right=0,mid=0;
-    if(j-1>=0)
+    
     left=arr[i][j]+func(i-1,j-1,n,arr);
     mid=arr[i][j]+func(i-1,j,n,arr);
-    if(j+1<n)
     right=arr[i][j]+func(i-1,j+1,n,arr);
     return max(left,max(mid,right));
 }
