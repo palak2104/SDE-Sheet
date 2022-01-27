@@ -17,8 +17,8 @@ int getMaxPathSum(vector<vector<int>> &arr)
     int m=arr.size();
     int n=arr[0].size();
     int res=-1e8;
+    vector<vector<int>>dp(m+1,vector<int>(n+1,-1));
     for(int i=0;i<n;i++){
-        vector<vector<int>>dp(m+1,vector<int>(n+1,-1));
         res=max(res,func(m-1,i,n,arr,dp));
     }
     return res;
