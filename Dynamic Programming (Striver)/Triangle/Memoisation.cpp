@@ -8,7 +8,7 @@ int func(vector<vector<int>>&arr, int n,int i,int j,vector<vector<int>>&dp){
     return dp[i][j]=min(left,right);
 }
 int minimumPathSum(vector<vector<int>>& triangle, int n){
-	// Write your code here.
+    // Write your code here.
     vector<vector<int>>dp(n+1,vector<int>(n+1,-1));
     return func(triangle,n,0,0,dp);
     
