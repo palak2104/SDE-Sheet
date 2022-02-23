@@ -22,5 +22,5 @@ int main()
         arr.push_back(x);
     }
     vector<int>dp(n,-1);
-    cout<<solve(n,arr,dp);
+    cout<<solve(n-1,arr,dp);
 }
