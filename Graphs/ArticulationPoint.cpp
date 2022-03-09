@@ -6,7 +6,7 @@ void findBridge(int node,int par,vector<int>&vis,vector<int>&in,vector<int>&low,
     vis[node]=1;
     in[node]=timer++;
     low[node]=timer++;
-    int child=0;
+    int child=0 ;
     for(auto it:arr[node]){
         if(it==par) continue;
         if(!vis[it]){
