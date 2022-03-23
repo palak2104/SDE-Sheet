@@ -10,6 +10,14 @@ class Solution {
           c=n;
         }
         return p;
+    
+    }
+    void print(ListNode* head){
+        while(head){
+            cout<<head->val<<" ";
+            head=head->next;
+        }
+        cout<<endl;
     }
 public:
     bool isPalindrome(ListNode* head) {
@@ -20,6 +28,7 @@ public:
             fast=fast->next->next;
         }
         slow->next=reverse(slow->next);
+        print(head);
         ListNode* mid=slow->next, *start= head;
         while(mid!=NULL){
             if(mid->val != start->val) return false;
@@ -27,6 +36,7 @@ public:
             start=start->next;
         }
         slow->next=reverse(slow->next);
+        print(head);
         return true;
     }
 };
