@@ -1,17 +1,16 @@
 class Solution{
-	public:
-	int minCoins(int coins[], int n, int V) 
-	{ 
-	    // Your code goes here
-	    sort(coins,coins+n,greater<>());
-	    int count=0;
-	    for(int i=0;i<n;i++){
+public:
+    vector<int> minPartition(int V)
+    {
+        // code here
+        vector<int>coins{2000,500,200,100,50,20,10,5,2,1};
+        vector<int>res;
+	    for(int i=0;i<coins.size();i++){
 	        while(V>=coins[i]){
 	            V-=coins[i];
-	            count++;
+	            res.push_back(coins[i]);
 	        }
 	    }
-	    return count;
-	} 
-	  
+	    return res;
+    }
 };
