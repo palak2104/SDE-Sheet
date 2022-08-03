@@ -24,6 +24,7 @@ void Multiply(Node* head,int n){
         Node* n=new Node(carry%10);
         a->next=n;
         carry/=10;
+        a=a->next;
     }
 }
 int main()
